@@ -9,7 +9,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
 import "./layout.css"
 
 const Layout = ({ children }) => (
@@ -25,7 +24,6 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
             margin: `0 auto`,
@@ -35,10 +33,13 @@ const Layout = ({ children }) => (
           }}
         >
           <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
+          <footer style={{ margin: `3rem 0 2rem` }}>
+            © {new Date().getFullYear()}{" "}
+            <a href="https://herper.io/">Jacob Herper</a> - Proudly built with
             {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
+            <a href="https://www.gatsbyjs.org/" target="_blank">
+              Gatsby
+            </a>
           </footer>
         </div>
       </>
